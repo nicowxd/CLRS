@@ -2,9 +2,8 @@
 
 using namespace std;
 
-int v[6] = {5, 2, 4, 6, 1, 3}, n = 6;
 
-void printArray (const char *s)
+void printArray (const char *s, int *v, int n)
 {
     printf("%s", s);
 
@@ -12,7 +11,7 @@ void printArray (const char *s)
         printf("%d%c", v[i], i == n - 1 ? '\n' : ' ');
 }
 
-void insertionSort ()
+void insertionSort (int *v, int n)
 {
     for (int i = 1; i < n; i++)
     {
@@ -31,11 +30,13 @@ void insertionSort ()
 int main()
 {
 
-    printArray("Before: ");
+    int A[6] = {5, 2, 4, 6, 1, 3}, n = 6;
+    
+    printArray("Before: ", A, n);
 
-    insertionSort();
+    insertionSort(A, n);
 
-    printArray("After: ");
+    printArray("After: ", A, n);
 
     return 0;
 }
