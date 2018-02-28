@@ -13,17 +13,17 @@ void printArray (const char *s, int *v, int n)
 
 void insertionSort (int *v, int n)
 {
-    for (int i = 1; i < n; i++)
+    for (int j = 1; j < n; j++)
     {
-        int key = v[i], j = i - 1;
+        int key = v[j], i = j - 1;
 
-        while (j >= 0 && v[j] < key)
+        while (i >= 0 && v[i] < key)
         {
-            v[j + 1] = v[j];
-            j--;
+            v[i + 1] = v[i];
+            i--;
         }
 
-        v[j + 1] = key;
+        v[i + 1] = key;
     }
 }
 
